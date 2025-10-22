@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Sabor Raiz - Cascavel, PR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <img src="sabor_raiz_logo.png" alt="Sabor Raiz Logo">
+                    <span>Sabor Raiz</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link active">Início</a></li>
+                    <li><a href="#menu" class="nav-link">Cardápio</a></li>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                    <li><a href="#cart" class="nav-link cart-link">🛒 <span id="cartCount">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-image-container">
+                    <img src="pizza_margherita.jpg" alt="Pizza Deliciosa" class="hero-pizza-img">
+                </div>
+                <h1 class="hero-title">Bem-vindo à Pizzaria Sabor Raiz</h1>
+                <p class="hero-subtitle">As melhores pizzas artesanais de Cascavel, PR</p>
+                <div class="hero-features">
+                    <div class="feature-badge">
+                        <span class="badge-icon">⭐</span>
+                        <span class="badge-text">4.8/5 Avaliação</span>
+                    </div>
+                    <div class="feature-badge">
+                        <span class="badge-icon">🚚</span>
+                        <span class="badge-text">Entrega Grátis</span>
+                    </div>
+                    <div class="feature-badge">
+                        <span class="badge-icon">🍕</span>
+                        <span class="badge-text">50+ Sabores</span>
+                    </div>
+                </div>
+                <a href="#menu" class="btn btn-primary btn-hero">Ver Cardápio</a>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <div class="container">
+                <h2>Nosso Cardápio</h2>
+                <div class="menu-tabs">
+                    <button class="tab-btn active" data-category="salgadas">Pizzas Salgadas</button>
+                    <button class="tab-btn" data-category="doces">Pizzas Doces</button>
+                    <button class="tab-btn" data-category="bebidas">Bebidas</button>
+                </div>
+                <div id="menuItems" class="menu-grid"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Nossa História</h3>
+                        <p>A Pizzaria Sabor Raiz nasceu da paixão pela culinária artesanal e pelo desejo de trazer sabores autênticos para Cascavel. Com receitas tradicionais e ingredientes selecionados, criamos pizzas que conquistam pelo sabor e qualidade.</p>
+                        <h3>Nossa Equipe</h3>
+                        <p><strong>Gerente:</strong> Cezar Augusto</p>
+                        <p><strong>Chef Principal:</strong> Vitor Garcia</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>⭐ 4.8/5</h4>
+                            <p>Avaliação Média</p>
+                        </div>
+                        <div class="stat">
+                            <h4>🍕 50+</h4>
+                            <p>Sabores Diferentes</p>
+                        </div>
+                        <div class="stat">
+                            <h4>🚚 Grátis</h4>
+                            <p>Entrega acima de R$ 50</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <h3>📍 Endereço</h3>
+                            <p>Rua Pio XII, 3212, Centro<br>Cascavel, PR</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>📞 Telefone</h3>
+                            <p>(45) 99846-2789</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>🕒 Horário</h3>
+                            <p>Terça a Domingo: 18h às 23h<br>Segunda: Fechado</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>✉️ E-mail</h3>
+                            <p>contato@saborraiz.com.br</p>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" placeholder="Nome" required>
+                        <input type="email" placeholder="E-mail" required>
+                        <input type="tel" placeholder="Telefone" required>
+                        <textarea placeholder="Mensagem" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="cart-section" style="display: none;">
+            <div class="container">
+                <h2>Seu Carrinho</h2>
+                <div id="cartItems" class="cart-items"></div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Taxa de Entrega:</span>
+                        <span id="deliveryFee">R$ 0,00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+                    <button class="btn btn-primary btn-block" id="checkoutBtn">Finalizar Pedido</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pizzaria Sabor Raiz. Todos os direitos reservados.</p>
+            <p>Desenvolvido com ❤️ para a melhor pizzaria de Cascavel</p>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Finalizar Pedido</h2>
+            <form id="checkoutForm">
+                <input type="text" name="nome" placeholder="Nome Completo" required>
+                <input type="tel" name="telefone" placeholder="Telefone" required>
+                <input type="text" name="endereco" placeholder="Endereço de Entrega" required>
+                <select name="payment" required>
+                    <option value="">Forma de Pagamento</option>
+                    <option value="credito">Cartão de Crédito</option>
+                    <option value="debito">Cartão de Débito</option>
+                    <option value="pix">PIX</option>
+                    <option value="dinheiro">Dinheiro</option>
+                </select>
+                <button type="submit" class="btn btn-primary btn-block">Confirmar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
